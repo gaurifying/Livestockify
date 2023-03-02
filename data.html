@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor Data</title>
+</head>
+<body>
+    <h1>Farm UnHealthy</h1><hr>
+
+    <h2>Temperature</h2>
+    <div id="myProgress">
+        <div id="myBar"></div>
+      </div>
+      <br>
+
+      <h2>CO2 level</h2>
+    <div id="myProgress">
+        <div id="myBar"></div>
+      </div>
+      <br>
+
+      <h2>Humidity</h2>
+    <div id="myProgress">
+        <div id="myBar"></div>
+      </div>
+      <br>
+
+      <h2>Ammonia</h2>
+    <div id="myProgress">
+        <div id="myBar"></div>
+      </div>
+      <br>
+
+
+      <style>
+        #myProgress {
+  width: 50%;
+  background-color: grey;
+}
+
+#myBar {
+  width: 30%;
+  height: 30px;
+  background-color: green;
+  margin-right: 100px;
+}
+      </style>
+
+      <script>
+        var i = 0;
+function move() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 1;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        if(width<50)
+        {
+            width++;
+        }
+        else
+        {
+            <h3>temperature exceeded</h3>
+        }
+        elem.style.width = width + "%";
+      }
+    }
+  }
+}</script>
+    
+</body>
+</html>
